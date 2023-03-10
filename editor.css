@@ -41,30 +41,26 @@ button.components-button.remove-section-image {
 .menu-section-items {
 	padding: 0 20px;
 }
-.menu-section-items .block-editor-block-list__layout {
+.menu-section-items > .block-editor-inner-blocks > .block-editor-block-list__layout {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 40px;
 }
-/* .menu-section-items .block-editor-block-list__layout > * {
-	padding: 40px 20px;
-} */
-.is-style-default .menu-section-items .block-editor-block-list__layout > * {
+
+.is-style-default .menu-section-items > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
 	width: 100%;
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 40px 0;
 }
-.is-style-default .menu-section-items .block-editor-block-list__layout {
-	display: block;
+.is-style-two-col-menu .menu-section-items > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
+	width: calc(50% - 40px);
 }
-.is-style-two-col-menu .menu-section-items .block-editor-block-list__layout > * {
-	width: 50%;
+.is-style-three-col-menu .menu-section-items > .block-editor-inner-blocks > .block-editor-block-list__layout > *  {
+	width: calc(33% - 26.66px);
 }
-.is-style-three-col-menu .menu-section-items .block-editor-block-list__layout > *  {
-	width: 33%;
-}
-.is-style-four-col-menu .menu-section-items .block-editor-block-list__layout > *  {
-	width: 25%;
+.is-style-four-col-menu .menu-section-items > .block-editor-inner-blocks > .block-editor-block-list__layout > *  {
+	width: calc(25% - 30px);
 }
 
 
@@ -109,15 +105,20 @@ button.components-button.remove-item-image {
 	align-items: center;
 }
 .menu-item-title h3 {
-	margin: 0;
-	font-size: 24px;
+	margin: 0 !important;
+	font-size: 20px;
 }
 .title_price {
     font-weight: bold;
-    margin-left: auto;
+    margin-left: auto !important;
 	width: auto;
     text-align: right;
     background: transparent;
+	font-size: 16px;
+}
+.item_descrip {
+	font-size: 16px;
+	text-align: left;
 }
 ul.price_list {
     list-style: none;
@@ -125,6 +126,7 @@ ul.price_list {
     flex-wrap: wrap;
 	margin: 0;
 	padding: 0 !important;
+	font-size: 14px;
 }
 .left ul.price_list,
 .center .left ul.price_list,
@@ -144,6 +146,7 @@ ul.price_list {
 
 ul.price_list li {
 	display: flex;
+	margin: 0 !important;
 }
 ul.price_list li .block-list-appender.wp-block {
     display: none;
@@ -162,3 +165,242 @@ ul.price_list li:before {
 ul.price_list li:first-child:before {
 	display: none;
 }
+
+
+
+
+
+
+.item-2-pricing-outer{
+    display : block;
+    border : 2px solid #eaeaea;
+}
+.item-2-pricing-header{
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #eaeaea;
+    padding: 10px;
+	font-size: 14px;
+    display: flex;
+}
+.item-2-pricing-inputs{
+    display: flex;
+    margin: 15px;
+    padding: 8px;
+    border: 1px solid #eaeaea;
+}
+.block-editor-plain-text{
+    padding: 5px;
+    height: 38px;
+    margin: auto 10px;
+	font-size: 14px;
+}
+.add-price-line{
+    border:0px !important;
+    border-width : 0px !important;
+    border-color : black !important;
+    background: black !important;
+    color : white !important;
+    display : flex !important;
+    font-size: 26px !important;
+    padding: 7px !important;
+    width: 36px !important;
+    height : 36px !important;
+    margin : auto !important;
+    line-height: 1em;
+    min-width: 36px !important;
+    align-items: center;
+    justify-content: center;
+    padding: 10px !important;
+    transition : all 0.3s;
+}
+.add-price-line span {
+    margin-top: -3px;
+}
+.add-price-line:hover{
+    background : #007cba !important;
+    transition: all 0.3s;
+}
+
+.block-editor-rich-text__editable{
+    margin-bottom: 20px;
+}
+.item-2-price-list{
+    padding: 15px;
+}
+.price_list_item{
+    border: 1px solid black;
+    list-style-type: none;
+    display: flex;
+    margin: 10px 0;
+    padding: 0px;
+    height: 48px;
+    transition : all 0.3s;
+    font-size: 12px;
+}
+.price_list_item.is_dragging{
+    background: lightgrey;
+    border : lightgrey;
+}
+.price_list_item.is_dragging *{
+    display: none;
+}
+.item-2-price-list-drag-handle{
+    cursor : pointer;
+    background: transparent;
+    border: none;
+}
+
+.item-2-price-list-mover-up, .item-2-price-list-mover-down{
+    background : transparent ;
+    border : none ;
+    display: flex;
+    height: 24px;
+}
+.item-2-price-list-item-delete{
+    margin: auto;
+    font-size: 18px !important;
+    font-weight: bold;
+    background : transparent;
+    border : none;
+    transition : all 0.3s;
+}
+.item-2-price-list-item-delete:hover{
+    color :rgb(21, 130, 255);
+    transition: all 0.3s;
+}
+.item-2-price-list-item-delete svg{
+    margin-top: 6px;
+}
+.item-2-price-list-item-delete svg path:hover,
+.item-2-price-list-item-delete svg:hover *{
+    fill : rgb(21, 130, 255);
+    transition: all 0.3s;
+}
+.size-label, .size-price, .addon-label, .addon-price{
+    margin : auto 10px;
+    transition : all 0.3s;
+}
+.size-label{
+    font-weight: bold;
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+    transition : all 0.3s;
+}
+.size-price {
+    color : black;
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+    transition : all 0.3s;
+}
+.addon-label{
+    font-weight: bold;
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+    text-align: right;
+    transition : all 0.3s;
+}
+.addon-price{
+    text-align: right;
+    display: flex;
+    width: fit-content;
+    white-space: nowrap;
+    color : black;
+    transition : all 0.3s;
+}
+.moveUpSVG{
+    margin-top: 6px;
+    transition : all 0.3s;
+    fill : black;
+}
+.moveUpSVG.first{
+    opacity: 0.3;
+}
+.moveUpSVG:hover, .moveDownSVG:hover{
+    fill : rgb(21, 130, 255);
+    transition : all 0.3s;
+}
+.moveDownSVG{
+    margin-top: -6px;
+    transition : all 0.3s;
+    fill : black;
+}
+.moveDownSVG.last{
+    opacity: 0.3;
+}
+.moveHandle{
+    margin-top: 6px;
+    transition: all 0.3s;
+}
+.moveHandle:hover{
+    fill : rgb(21, 130, 255);
+    transition: all 0.3s;    
+}
+.invisible_item{
+    display: none;
+    height: 0px !important;
+}
+.editable_div{
+    display: flex;
+    width: fit-content;
+}
+.editable_div input{
+    width : 100%;
+    border : none !important;
+    box-shadow: none !important;
+    outline: 0;
+    font-size : 12px !important;
+}
+.editable_div input:focus, .editable_div input:active{
+    border : none !important;
+    box-shadow: none !important;
+    outline: 0;
+}
+.size-label .editable_div input{
+    width : 150px;
+}
+.addon-price .editable_div input{
+    text-align: right;
+}
+.addon-label .editable_div input{
+    text-align: right;
+    width: 180px;
+}
+.is_draggingBody *{
+    cursor : url('dragimg.png'),auto !important;
+}
+.block-editor-plain-text::placeholder{
+    font-style: italic;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 40px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 0px;
+    padding: 5px 0;
+    font-size:12px;
+    position: absolute;
+    z-index: 1;
+    top: 110%;
+    margin-left: -30px;
+    opacity : 0;
+    transition : opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity : 1;
+  }
+  

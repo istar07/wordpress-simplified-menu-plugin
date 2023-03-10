@@ -7,6 +7,7 @@
  * Author: iSimplifyMe
  */
 
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -88,10 +89,10 @@ function gutenberg_menu_item_register_block() {
 	);
 
 	wp_register_script(
-		'simplified-menu-item-2',
-		plugins_url( 'item-2.js', __FILE__ ),
+		'simplified-menu-item-detailed-list',
+		plugins_url( 'item-detailed-list.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-block-editor', 'underscore' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'item-2.js' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'item-detailed-list.js' )
 	);
 
 	wp_register_style(
@@ -113,9 +114,9 @@ function gutenberg_menu_item_register_block() {
 		'editor_script' => 'simplified-menu-item',
 	) );
 
-	register_block_type( 'gutenberg/menu-item-2', array(
+	register_block_type( 'gutenberg/menu-item-detailed-list', array(
 		'editor_style' => 'simplified-menu-item-editor',
-		'editor_script' => 'simplified-menu-item-2',
+		'editor_script' => 'simplified-menu-item-detailed-list',
 	) );
 
   if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -139,3 +140,10 @@ function simplified_menu_styles_init() {
     wp_register_style( 'simplified-menu-styles', plugins_url( 'style.css', __FILE__ ) );
     wp_enqueue_style( 'simplified-menu-styles' );
 }
+
+function hs_enqueue_scripts(){
+
+	wp_enqueue_script('jquery-ui-core');
+}
+add_action('admin_enqueue_scripts', 'hs_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'hs_enqueue_scripts');

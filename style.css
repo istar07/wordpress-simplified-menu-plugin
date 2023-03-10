@@ -7,9 +7,11 @@
 }
 .wp-block-gutenberg-menu-section.center {
 	text-align: center;
+	justify-content: center;
 }
 .wp-block-gutenberg-menu-section.right {
 	text-align: right;
+	justify-content: right;
 }
 .menu-section-image-banner {
     text-align: center;
@@ -52,34 +54,44 @@ button.components-button.remove-section-image {
 
 /***** Menu Item ****/
 
-.wp-block-gutenberg-menu-item {
+.wp-block-gutenberg-menu-item,
+.wp-block-gutenberg-menu-item-detailed-list {
 	padding: 40px 20px;
 }
 .wp-block-gutenberg-menu-item .wp-block-gutenberg-menu-item {
 	padding: 0;
 }
-.is-style-default .wp-block-gutenberg-menu-item {
+.is-style-default .wp-block-gutenberg-menu-item,
+.is-style-default .wp-block-gutenberg-menu-item-detailed-list {
 	width: 100%;
 	max-width: 600px;
 	margin: 0 auto;
 	padding: 40px 0;
 }
-.is-style-two-col-menu .wp-block-gutenberg-menu-item {
+.is-style-two-col-menu .wp-block-gutenberg-menu-item,
+.is-style-two-col-menu .wp-block-gutenberg-menu-item-detailed-list {
 	width: 50%;
 }
-.is-style-three-col-menu .wp-block-gutenberg-menu-item {
+.is-style-three-col-menu .wp-block-gutenberg-menu-item,
+.is-style-three-col-menu .wp-block-gutenberg-menu-item-detailed-list {
 	width: 33%;
 }
-.is-style-four-col-menu .wp-block-gutenberg-menu-item {
+.is-style-four-col-menu .wp-block-gutenberg-menu-item,
+.is-style-four-col-menu .wp-block-gutenberg-menu-item-detailed-list {
 	width: 25%;
 }
-.wp-block-gutenberg-menu-item.left {
+.wp-block-gutenberg-menu-item,
+.wp-block-gutenberg-menu-item-detailed-list,
+.wp-block-gutenberg-menu-item.left,
+.wp-block-gutenberg-menu-item-detailed-list.left {
 	text-align: left;
 }
-.wp-block-gutenberg-menu-item.center {
+.wp-block-gutenberg-menu-item.center,
+.wp-block-gutenberg-menu-item-detailed-list.center {
 	text-align: center;
 }
-.wp-block-gutenberg-menu-item.right {
+.wp-block-gutenberg-menu-item.right,
+.wp-block-gutenberg-menu-item-detailed-list.right {
 	text-align: right;
 }
 .menu-item-image {
@@ -107,14 +119,12 @@ button.components-button.remove-item-image {
     height: 100%;
 }
 .menu-item-title {
-    display: flex;
     margin-bottom: 10px;
-	align-items: center;
 }
 .menu-item-title h3 {
 	margin: 0;
 	font-size: 24px;
-	text-align: left;
+	text-align: left !important;
 }
 .menu-item-title h3:only-child {
 	text-align: center;
@@ -188,4 +198,95 @@ ul.price_list li:first-child:before {
 		width: 100%;
 		padding: 40px 0;
 	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.block-editor-plain-text{
+    margin: 0 10px;
+}
+.item-2-pricing-outer{
+    display : block;
+}
+.item-2-pricing-header{
+    text-transform: uppercase;
+    background: #eaeaea;
+    padding: 15px;
+    display: flex;
+}
+.item-2-pricing-inputs{
+    display: flex;
+    margin: 15px;
+    padding: 8px;
+    border: 1px solid #eaeaea;
+}
+.block-editor-plain-text{
+    padding:10px;
+    height: 38px;
+    margin : auto 10px;
+}
+.add-price-line{
+    border:0px !important;
+    border-width : 0px !important;
+    border-color : black !important;
+    background: black !important;
+    color : white !important;
+    display : flex !important;
+    font-size: 26px !important;
+    padding: 7px !important;
+    
+}
+.block-editor-rich-text__editable{
+    margin-bottom: 20px;
+}
+.item-2-price-list{
+    padding: 0;
+	margin: 10px 0 0;
+}
+.price_list_item{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0px;
+}
+.item-2-price-list-drag-handle{
+    background: transparent;
+    border: none;
+}
+.item-2-price-list-mover-up, .item-2-price-list-mover-down{
+    background : transparent ;
+    border : none ;
+    display: flex;
+    height: 24px;
+}
+.item-2-price-list-item-delete{
+    background : transparent;
+    border : none;
+}
+.size-label,
+.addon-label {
+    font-weight: bold;
+	margin-right: 0.25em;
+}
+.addon-label:last-child {
+	margin-right: 0;
+}
+.size-price {
+	margin-right: auto;
+}
+.addon-price{ 
+}
+.item_descrip{
+}
+.invisible_item{
+    display: none;
 }

@@ -184,8 +184,7 @@
 							props.setAttributes( { description: value } );
 						},
 					} ),
-					el( 'div',
-						blockProps,
+					
 						el( InnerBlocks, {
 							template: [
 								[ 'core/list', {
@@ -193,12 +192,12 @@
 									placeholder: __(
 										'Enter a list of price options…',
 										'simplified-menu'
-									)
+									),
+									values: attributes.price_list
 								}]
 							],
 							templateLock: 'all'
 						})
-					)
 				)
 			]
 		},
@@ -237,7 +236,7 @@
 					className: 'item_descrip',
 					value: attributes.description,
 				} ),
-				el( 'div', blockProps, el( InnerBlocks.Content ) )
+				el( InnerBlocks.Content )
 			);
 		},
 	} );
